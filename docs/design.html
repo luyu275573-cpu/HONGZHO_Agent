@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>④ 鸿智 Agent 一句话个人助理 · UI 设计图</title>
+<style>
+  :root{ --bg:#0B1120; --panel:#111A2E; --sky:#38BDF8; --violet:#8B5CF6; --green:#22C55E; --amber:#F59E0B; --ink:#E2E8F0; --sub:#7C8BA1; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#060A14;color:#e5e7eb;padding:32px 20px}
+  .wrap{max-width:1180px;margin:0 auto}
+  h1{font-size:26px;color:#fff;margin-bottom:6px}
+  h1 small{font-size:14px;color:#94a3b8;font-weight:400;margin-left:10px}
+  .sub{color:#94a3b8;font-size:13px;margin-bottom:24px}
+  h2{font-size:16px;color:#fff;margin:30px 0 14px;padding-left:10px;border-left:3px solid var(--sky)}
+  .swatches{display:flex;gap:10px;flex-wrap:wrap}
+  .sw{width:120px;height:64px;border-radius:10px;display:flex;align-items:flex-end;padding:8px;font-size:11px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+  .sw span{background:rgba(0,0,0,.25);padding:1px 6px;border-radius:4px}
+  table{width:100%;border-collapse:collapse;background:#0F172A;border-radius:10px;overflow:hidden;font-size:13px}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #1e293b}
+  th{background:#1e293b;color:#fff;font-weight:600}
+  td{color:#cbd5e1}
+  .pages{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start}
+  .mockup{width:300px;background:#111A2E;border-radius:24px;padding:14px;box-shadow:0 12px 40px rgba(0,0,0,.6)}
+  .label{color:#94a3b8;font-size:12px;text-align:center;margin-top:10px}
+  .screen{background:var(--bg);border-radius:16px;overflow:hidden;height:520px;display:flex;flex-direction:column;position:relative}
+  .statusbar{height:26px;background:var(--bg);display:flex;justify-content:space-between;align-items:center;padding:0 12px;color:#cbd5e1;font-size:10px}
+  .navbar{background:linear-gradient(135deg,#0EA5E9,#8B5CF6);padding:12px 14px;font-size:14px;font-weight:700;color:#fff;display:flex;justify-content:space-between;align-items:center}
+  .chat{flex:1;overflow:hidden;padding:12px;display:flex;flex-direction:column;gap:10px}
+  .bubble{max-width:86%;padding:9px 12px;font-size:12px;line-height:1.5;border-radius:14px}
+  .bubble.user{align-self:flex-end;background:linear-gradient(135deg,#0EA5E9,#6366F1);color:#fff;border-bottom-right-radius:4px}
+  .bubble.ai{align-self:flex-start;background:#111A2E;color:var(--ink);border:1px solid #1e293b;border-bottom-left-radius:4px}
+  .toolcall{align-self:flex-start;width:100%;background:#0F172A;border:1px solid #1e293b;border-radius:12px;padding:10px;font-size:11px}
+  .toolcall .th{display:flex;align-items:center;gap:6px;color:var(--sky);font-weight:700;margin-bottom:6px}
+  .toolcall .status{color:var(--green);font-size:10px}
+  .toolcall .st{display:flex;justify-content:space-between;padding:4px 0;color:#94a3b8;font-size:10px;border-bottom:1px dashed #1e293b}
+  .toolcall .st b{color:#cbd5e1}
+  .inputbar{background:#0F172A;border-top:1px solid #1e293b;padding:10px;display:flex;gap:8px;align-items:center}
+  .input{flex:1;background:#111A2E;border:1px solid #1e293b;border-radius:18px;padding:8px 12px;font-size:12px;color:#7C8BA1}
+  .send{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#0EA5E9,#8B5CF6);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px}
+  .skill{background:#111A2E;border:1px solid #1e293b;border-radius:12px;padding:10px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#cbd5e1}
+  .skill .on{color:var(--green);font-size:10px;font-weight:700}
+  .kb{background:#111A2E;border:1px solid #1e293b;border-radius:12px;padding:10px;margin-bottom:8px;font-size:11px}
+  .kb .t{color:#cbd5e1;font-weight:600;margin-bottom:4px}
+  .kb .m{color:#7C8BA1;font-size:10px}
+  .chip{display:inline-block;background:#1e293b;color:#94a3b8;border-radius:12px;padding:3px 8px;font-size:9px;margin-right:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>④ 鸿智 Agent 一句话个人助理 <small>鸿蒙原生 #2 · 阶段④ 收官</small></h1>
+  <div class="sub">定位：一句话描述需求，AI 自主规划调用系统工具完成任务 · 时间 2026.05–2026.10</div>
+
+  <h2>视觉风格</h2>
+  <div class="swatches">
+    <div class="sw" style="background:#0B1120">深底<span>#0B1120</span></div>
+    <div class="sw" style="background:#38BDF8">天青<span>#38BDF8</span></div>
+    <div class="sw" style="background:#8B5CF6">紫罗兰<span>#8B5CF6</span></div>
+    <div class="sw" style="background:#22C55E">成功绿<span>#22C55E</span></div>
+    <div class="sw" style="background:#F59E0B">运行琥珀<span>#F59E0B</span></div>
+  </div>
+  <p style="color:#94a3b8;font-size:13px;margin-top:10px">风格：科技智能感 · 深色 + 天青/紫罗兰渐变 · 工具调用过程可视化卡片 · 状态色（规划=蓝/执行=琥珀/完成=绿）· 圆角 12–16px</p>
+
+  <h2>功能清单</h2>
+  <table>
+    <tr><th>页面</th><th>核心功能</th><th>智能体能力</th></tr>
+    <tr><td>对话主页（Agent）</td><td>一句话任务、规划、多轮追问、流式回答</td><td>Agent 循环 + Function Calling</td></tr>
+    <tr><td>工具调用过程</td><td>规划 → 工具调用 → 结果回填 → 完成 可视化</td><td>25+ 系统工具编排</td></tr>
+    <tr><td>知识库管理</td><td>文档上传、切分、RAG 检索问答、引用来源</td><td>RAG + 向量检索</td></tr>
+    <tr><td>技能 / 工具配置</td><td>技能包热插拔、工具开关、参数说明</td><td>JSON 技能包</td></tr>
+    <tr><td>记忆与多设备</td><td>长期记忆、用户画像、任务跨设备同步</td><td>记忆系统 + 分布式</td></tr>
+  </table>
+
+  <h2>页面设计图（5 屏）</h2>
+  <div class="pages">
+    <!-- 对话主页 -->
+    <div>
+      <div class="mockup"><div class="screen">
+        <div class="statusbar"><span>9:41</span><span>🤖 鸿智 Agent</span></div>
+        <div class="navbar"><span>鸿智 Agent</span><span style="font-size:10px;font-weight:400">DeepSeek-R1</span></div>
+        <div class="chat">
+          <div class="bubble user">明天上午十点提醒我开周会</div>
+          <div class="toolcall"><div class="th">🧠 规划 <span class="status">● 执行中</span></div><div class="st"><span>意图</span><b>创建提醒</b></div><div class="st"><span>工具</span><b>reminder.create</b></div><div class="st"><span>参数</span><b>{time: 明天 10:00, title: 周会}</b></div></div>
+          <div class="bubble ai">已为你创建提醒：明天 10:00 周会 ✅</div>
+        </div>
+        <div class="inputbar"><span style="font-size:14px">🎤</span><div class="input">一句话描述需求…</div><div class="send">➤</div></div>
+      </div></div>
+      <p class="label">对话主页 · 一句话任务</p>
+    </div>
+    <!-- 工具调用过程 -->
+    <div>
+      <div class="mockup"><div class="screen">
+        <div class="statusbar"><span>9:41</span><span>🤖 执行过程</span></div>
+        <div class="navbar">任务执行轨迹</div>
+        <div class="chat">
+          <div class="toolcall"><div class="th">🧠 意图理解 <span class="status">✓ 完成</span></div><div class="st"><span>结果</span><b>查询成都天气并总结</b></div></div>
+          <div class="toolcall"><div class="th" style="color:var(--amber)">⚙️ 工具调用 <span class="status">● 运行中</span></div><div class="st"><span>工具</span><b>weather.get(city=成都)</b></div><div class="st"><span>耗时</span><b>0.8s</b></div></div>
+          <div class="toolcall"><div class="th" style="color:var(--green)">✅ 结果回填 <span class="status">✓ 完成</span></div><div class="st"><span>温度</span><b>22–28℃ 多云</b></div></div>
+          <div class="bubble ai">成都今天多云，22–28℃，适合出行。</div>
+        </div>
+      </div></div>
+      <p class="label">工具调用 · 可视化轨迹</p>
+    </div>
+    <!-- 知识库 -->
+    <div>
+      <div class="mockup"><div class="screen">
+        <div class="statusbar"><span>9:41</span><span>🤖 知识库</span></div>
+        <div class="navbar">知识库管理</div>
+        <div class="chat" style="gap:8px">
+          <div class="kb"><div class="t">📄 农场养殖手册.pdf</div><div class="m">128 切片 · 向量库 v3 · 已同步</div></div>
+          <div class="kb"><div class="t">📊 兽药使用说明.docx</div><div class="m">45 切片 · 已同步</div></div>
+          <div class="kb"><div class="t">📁 病害防治指南</div><div class="m">23 切片 · 权限：养殖组</div></div>
+          <div class="bubble ai">问：「上季度项目总结里写了什么？」<br><span class="chip">📄 来源：项目总结.pdf §3.2</span><span class="chip">📄 §5.1</span></div>
+        </div>
+      </div></div>
+      <p class="label">知识库 · RAG + 引用来源</p>
+    </div>
+    <!-- 技能配置 -->
+    <div>
+      <div class="mockup"><div class="screen">
+        <div class="statusbar"><span>9:41</span><span>🤖 技能包</span></div>
+        <div class="navbar">技能 / 工具配置</div>
+        <div class="chat" style="gap:8px">
+          <div class="skill"><span>🌤️ 天气查询</span><span class="on">启用</span></div>
+          <div class="skill"><span>⏰ 提醒</span><span class="on">启用</span></div>
+          <div class="skill"><span>📅 日历</span><span class="on">启用</span></div>
+          <div class="skill"><span>📁 文件操作</span><span class="on">启用</span></div>
+          <div class="skill"><span>🔎 搜索</span><span class="on">启用</span></div>
+          <div class="skill"><span>🧠 记忆</span><span class="on" style="color:#F59E0B">仅本地</span></div>
+        </div>
+        <div class="navbar" style="justify-content:center;font-size:12px;background:#111A2E">＋ 添加技能包（JSON）</div>
+      </div></div>
+      <p class="label">技能配置 · 热插拔</p>
+    </div>
+    <!-- 多设备协同 -->
+    <div>
+      <div class="mockup"><div class="screen">
+        <div class="statusbar"><span>9:41</span><span>🤖 多设备</span></div>
+        <div class="navbar">多设备协同</div>
+        <div class="chat" style="align-items:center;justify-content:center">
+          <div style="font-size:40px">📱</div>
+          <div style="color:#7C8BA1;font-size:20px">⇄</div>
+          <div style="font-size:40px">💻</div>
+          <div style="color:#cbd5e1;font-size:13px;font-weight:600;margin-top:10px">任务与提醒跨设备同步</div>
+          <div style="color:#7C8BA1;font-size:11px;text-align:center;line-height:1.7">手机发起 → 平板/PC 接续<br>提醒同步到手表</div>
+          <div style="display:flex;gap:6px;margin-top:8px"><span class="chip">📱 手机</span><span class="chip">⌚ 手表</span><span class="chip">💻 平板</span></div>
+        </div>
+      </div></div>
+      <p class="label">多设备协同 · 分布式</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

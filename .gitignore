@@ -1,0 +1,22 @@
+# HarmonyOS / OpenHarmony
+/node_modules/
+/oh_modules/
+/.hvigor/
+/.idea/
+/build/
+/entry/build/
+**/.preview/
+local.properties
+*.hap
+*.app
+*.har
+.hvigor/
+.cxx/
+oh-package-lock.json5
+.DS_Store
+
+# 密钥与本地配置
+.env
+*.key
+*.p12
+*.cer
