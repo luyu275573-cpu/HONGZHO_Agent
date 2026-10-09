@@ -22,6 +22,13 @@ export class DesignTokens {
   static readonly TEXT_SUB: string = '#7C8BA1'
   static readonly TEXT_ON_DARK: string = '#FFFFFF'
 
+  // 字号（vp）
+  static readonly FONT_TITLE: number = 16
+  static readonly FONT_BODY: number = 13
+  static readonly FONT_SUB: number = 12
+  static readonly FONT_LABEL: number = 11
+  static readonly FONT_ICON: number = 18
+
   // 圆角
   static readonly RADIUS: number = 12
   static readonly RADIUS_CARD: number = 16
