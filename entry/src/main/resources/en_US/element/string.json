@@ -1,0 +1,7 @@
+{
+  "string": [
+    { "name": "module_desc", "value": "HongZhi Agent assistant" },
+    { "name": "EntryAbility_desc", "value": "personal assistant" },
+    { "name": "EntryAbility_label", "value": "HongZhi Agent" }
+  ]
+}

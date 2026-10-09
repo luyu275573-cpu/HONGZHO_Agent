@@ -1,0 +1,7 @@
+{
+  "string": [
+    { "name": "module_desc", "value": "鸿智 Agent 个人助理" },
+    { "name": "EntryAbility_desc", "value": "一句话个人助理" },
+    { "name": "EntryAbility_label", "value": "鸿智 Agent" }
+  ]
+}
