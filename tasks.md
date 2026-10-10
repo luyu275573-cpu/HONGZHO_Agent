@@ -17,3 +17,12 @@
 - 不包含：真实 LLM、系统提醒 API、网络请求和 UI 接入。
 - 验收：源码通过 ArkTS 编译；提供可复用的类型和运行结果；构建日志已回填到 `changes.md`。
 - 证据：`entry/src/main/ets/core/agent/AgentLoop.ets`、`scripts/check-standard.ps1`、`scripts/build-harmony.ps1`。
+
+## HZ-003 本地提醒工具链路
+
+- 状态：`done`
+- 目标：将 AgentLoop 接入工具注册表和 ReminderTool，完成本地提醒请求的规划与结果回填。
+- 范围：工具契约、注册表、参数校验、执行超时边界、聊天页本地 Agent。
+- 不包含：系统 Reminder Kit、真实网络模型、持久化和语音。
+- 验收：ArkTS 构建通过；提醒输入经过 AgentLoop 返回结构化模拟结果；未知工具和空参数有明确返回。
+- 证据：`core/agent/LocalDemoAgent.ets`、`tools/ToolRegistry.ets`、`tools/ReminderTool.ets`。

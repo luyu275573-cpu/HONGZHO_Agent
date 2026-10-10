@@ -2,6 +2,17 @@
 
 ## 2026-10-10
 
+### HZ-003（进行中）
+
+- 目标：将 AgentLoop 接入本地工具注册表和 ReminderTool，打通提醒文本的模拟执行链路。
+- 当前状态：`done`。
+- 改动：新增 ToolModels、ReminderTool、ToolRegistry、LocalDemoAgent；聊天页发送提醒文本时调用本地 AgentLoop。
+- 验证：`scripts/check-standard.ps1` 返回 `STANDARD CHECK PASSED`；`scripts/build-harmony.ps1` 返回 `BUILD SUCCESSFUL`。
+- 产物：`entry/build/default/outputs/default/entry-default-unsigned.hap`，118561 bytes。
+- 遗留：ReminderTool 当前只返回模拟结果，真实 Reminder Kit 后续接入。
+
+## 2026-10-10
+
 ### HZ-002 AgentLoop 纯逻辑核心
 
 - 目标：建立 AgentLoop 纯逻辑核心，约束循环上限和工具结果边界。

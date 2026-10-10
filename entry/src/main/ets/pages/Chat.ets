@@ -1,4 +1,5 @@
 import { DesignTokens } from '../common/DesignTokens';
+import { LocalDemoAgent } from '../core/agent/LocalDemoAgent';
 
 interface ChatMessage {
   id: number;
@@ -14,6 +15,7 @@ export struct ChatPage {
     { id: 2, role: 'assistant', content: '已为你创建提醒：明天 10:00 周会 ✅' }
   ];
   private nextMessageId: number = 3;
+  private readonly demoAgent: LocalDemoAgent = new LocalDemoAgent();
 
   build() {
     Column() {
@@ -59,7 +61,7 @@ export struct ChatPage {
   @Builder
   MessageThread(message: ChatMessage) {
     this.MessageBubble(message)
-    if (message.id === 1) {
+    if (message.role === 'user' && message.content.indexOf('提醒') >= 0) {
       this.ToolCallCard()
     }
   }
@@ -170,15 +172,16 @@ export struct ChatPage {
     .backgroundColor(DesignTokens.PANEL_DARK)
   }
 
-  private sendMessage(): void {
+  private async sendMessage(): Promise<void> {
     const content: string = this.input.trim()
     if (content.length === 0) {
       return
     }
-    this.messages = this.messages.concat([
-      { id: this.nextMessageId++, role: 'user', content: content },
-      { id: this.nextMessageId++, role: 'assistant', content: '已收到，我会继续为你处理。' }
-    ])
+    this.messages = this.messages.concat([{ id: this.nextMessageId++, role: 'user', content: content }])
     this.input = ''
+    const result = await this.demoAgent.run(content)
+    this.messages = this.messages.concat([
+      { id: this.nextMessageId++, role: 'assistant', content: result.answer }
+    ])
   }
 }

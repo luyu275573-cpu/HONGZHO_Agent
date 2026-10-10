@@ -3,9 +3,17 @@ export interface AgentToolCall {
   arguments: string;
 }
 
-export type AgentDecision =
-  | { kind: 'final'; content: string }
-  | { kind: 'tool'; call: AgentToolCall };
+export interface AgentFinalDecision {
+  kind: 'final';
+  content: string;
+}
+
+export interface AgentToolDecision {
+  kind: 'tool';
+  call: AgentToolCall;
+}
+
+export type AgentDecision = AgentFinalDecision | AgentToolDecision;
 
 export type AgentStepStatus = 'planning' | 'executing' | 'completed' | 'failed';
 
