@@ -1,5 +1,17 @@
 # 开发日志
 
+## 2026-10-11
+
+### HZ-004 OpenAI 兼容 LLM 与 SSE 传输层
+
+- 目标：为真实模型和模拟器 mock 服务建立统一的 OpenAI 风格 HTTP/SSE 接入层。
+- 当前状态：`done`。
+- 改动：新增 `LLMModels` 请求/响应契约；新增支持跨 chunk 半行、`data:` 和 `[DONE]` 的 `StreamParser`；新增 `LLMClient`，支持 `/chat/completions`、流式增量回调、Function Calling 响应解析、超时、HTTP 状态和空响应处理。
+- 安全：baseUrl、apiKey、model 均由调用方注入，仓库未写入真实密钥；默认聊天页继续使用 `LocalDemoAgent`。
+- 验证：`scripts/check-standard.ps1`、`scripts/build-harmony.ps1`；构建结果 `BUILD SUCCESSFUL`。
+- 产物：`entry/build/default/outputs/default/entry-default-unsigned.hap`，118561 bytes。
+- 遗留：尚未配置真实模型或本地 mock 地址，尚未进行模拟器网络联调；流式 Function Calling 增量拼接将在 AgentLoop 接入阶段补齐。
+
 ## 2026-10-10
 
 ### HZ-003（进行中）

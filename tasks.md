@@ -26,3 +26,12 @@
 - 不包含：系统 Reminder Kit、真实网络模型、持久化和语音。
 - 验收：ArkTS 构建通过；提醒输入经过 AgentLoop 返回结构化模拟结果；未知工具和空参数有明确返回。
 - 证据：`core/agent/LocalDemoAgent.ets`、`tools/ToolRegistry.ets`、`tools/ReminderTool.ets`。
+
+## HZ-004 OpenAI 兼容 LLM 与 SSE 传输层
+
+- 状态：`done`
+- 目标：接入可配置的 OpenAI 风格 `/chat/completions` 客户端，为真实模型和本地 mock 服务提供统一传输层。
+- 范围：LLM 请求/响应契约、跨分块 SSE 解析、HTTP 流式请求、超时和错误边界。
+- 约束：不写入真实 API Key；默认聊天页仍使用本地演示 Agent，避免未配置模型时影响原型。
+- 验收：ArkTS 编译通过；空配置、非 2xx、空响应、网络异常和超时有明确失败；请求结束释放 HTTP 资源。
+- 证据：`entry/src/main/ets/core/llm/LLMModels.ets`、`StreamParser.ets`、`LLMClient.ets`。
