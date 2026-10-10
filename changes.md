@@ -2,6 +2,17 @@
 
 ## 2026-10-11
 
+### HZ-005 远程模型接入 AgentLoop
+
+- 目标：将 OpenAI 兼容模型的 Function Calling 响应适配为现有 AgentLoop 决策，并复用本地 ToolRegistry 执行工具。
+- 当前状态：`done`。
+- 改动：新增 `RemoteAgent`；模型工具调用转换为 `AgentToolDecision`，工具结果以文本消息回填下一轮规划；`LLMClient` 将工具契约转换为 OpenAI 标准的 `type=function` wire 格式。
+- 验证：`scripts/check-standard.ps1` 返回 `STANDARD CHECK PASSED`；`scripts/build-harmony.ps1` 返回 `BUILD SUCCESSFUL`。
+- 产物：`entry/build/default/outputs/default/entry-default-unsigned.hap`，118715 bytes。
+- 遗留：远程 Agent 尚未接入默认聊天页；流式工具调用增量拼接、设置页配置和真实模型地址留待后续单元。
+
+## 2026-10-11
+
 ### HZ-004 OpenAI 兼容 LLM 与 SSE 传输层
 
 - 目标：为真实模型和模拟器 mock 服务建立统一的 OpenAI 风格 HTTP/SSE 接入层。

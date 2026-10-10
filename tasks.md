@@ -35,3 +35,12 @@
 - 约束：不写入真实 API Key；默认聊天页仍使用本地演示 Agent，避免未配置模型时影响原型。
 - 验收：ArkTS 编译通过；空配置、非 2xx、空响应、网络异常和超时有明确失败；请求结束释放 HTTP 资源。
 - 证据：`entry/src/main/ets/core/llm/LLMModels.ets`、`StreamParser.ets`、`LLMClient.ets`。
+
+## HZ-005 远程模型接入 AgentLoop
+
+- 状态：`done`
+- 目标：将 OpenAI 兼容模型的 Function Calling 响应适配为现有 AgentLoop 决策，并复用 ToolRegistry 执行本地工具。
+- 范围：工具 schema wire 格式转换、模型规划器、工具结果回填和异常收敛。
+- 边界：不写入 API Key；默认聊天页继续使用本地演示 Agent；流式工具调用增量拼接和设置页配置放到后续单元。
+- 验收：远程 Agent 可由调用方注入 `LLMConfig`；模型返回工具调用时进入 AgentLoop；工具结果再次回填模型；ArkTS 构建通过。
+- 证据：`entry/src/main/ets/core/agent/RemoteAgent.ets`、`entry/src/main/ets/core/llm/LLMClient.ets`。

@@ -7,7 +7,16 @@ interface ChatRequestBody {
   model: string;
   messages: Message[];
   stream: boolean;
-  tools?: ToolSchema[];
+  tools?: WireTool[];
+}
+
+interface WireTool {
+  type: 'function';
+  function: {
+    name: string;
+    description: string;
+    parameters: Object;
+  };
 }
 
 interface ChatResponsePayload {
@@ -189,7 +198,16 @@ export class LLMClient {
       stream: stream
     };
     if (tools !== undefined && tools.length > 0) {
-      body.tools = tools;
+      body.tools = tools.map((tool: ToolSchema): WireTool => {
+        return {
+          type: 'function',
+          function: {
+            name: tool.name,
+            description: tool.description,
+            parameters: tool.parameters
+          }
+        };
+      });
     }
     return body;
   }
